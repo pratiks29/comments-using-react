@@ -1,18 +1,23 @@
-import React from 'react';
+import React from "react";
+import faker from "@faker-js/faker";
 
-const CommentDetail = function(){
-    return(
-        <div className='comment'>
-        <a href='/' className='avator'>
-            <img src='faker.image.image()' alt='avator'/>
+const CommentDetail = function (props) {
+  return (
+    <div className="comment">
+      <a href="/" className="avator">
+        <img src={props.imagep} alt="avator" />
+      </a>
+      <div className="content">
+        <a href="/" className="author">
+          {props.author}
         </a>
-        <div className='content'>
-            <a href ='/' className='author'>Sam</a>
-            <div className='metadata'>
-                <span className='date'>today at6:00 pm</span>                       
-            </div>
-            <div className='text'>nice cbro</div>
+        <div className="metadata">
+          <span className="date">{props.timeAgo}</span>
         </div>
+        <div className="text">{props.comment}</div>
+      </div>
     </div>
-    );
-}
+  );
+};
+
+export default CommentDetail;
